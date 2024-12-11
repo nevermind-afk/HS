@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <script src="js\3lab.js" defer></script>
+    <script src="C:\Users\artur\Desktop\sites\javascript\3lab.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <link rel="stylesheet" href="styles/2.css">
+    <link rel="stylesheet" href="C:\Users\artur\Desktop\Сайты HTML\css\2.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HomeStore - интернет-магазин умного дома">
@@ -19,7 +19,7 @@
                     <li><a href="#home">Главная</a></li>
                     <li><a href="#products">Продукция</a></li>
                     <li><a href="#contact">Контакты</a></li>
-                    <li><a href="JQ&VUE.html">Для персонала</a></li>
+                    <li><a href="C:\Users\artur\Desktop\Сайты HTML\html\partsite.html">Партнерский сайт</a></li>
                 </ul>
             </nav>
         </div>
@@ -89,151 +89,94 @@
                     </form>
                 </div>          
                 <button id="sortPriceButton">Сортировать по цене</button>
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                <button id="toggle-table-btn">Показать/скрыть таблицу</button>
-                <!-- Подключение DataTables -->
-                <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-                <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-                
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Таблица товаров</title>
-                
-                    <!-- Подключение jQuery -->
-                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                
-                    <!-- Подключение DataTables -->
-                    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-                    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-                
-                    <style>
-                        /* Стили для таблицы */
-                        table {
-                            width: 100%;
-                            border-collapse: collapse;
-                        }
-                        th, td {
-                            padding: 10px;
-                            text-align: center;
-                            border: 1px solid #ddd;
-                        }
-                        th {
-                            background-color: rgba(70, 130, 180, 0.8);
-                            color: white;
-                        }
-                        tr:hover {
-                            background-color: rgba(208, 231, 249, 0.8);
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="products-table">
-                        <h3>Таблица доступных товаров</h3>
-                        <button id="toggle-table-btn">Показать/скрыть таблицу</button>
-                        <table id="productsTable" class="display">
-                            <thead>
-                                <tr>
-                                    <th>Фото</th>
-                                    <th>Название товара</th>
-                                    <th>Категория</th>
-                                    <th>Цена</th>
-                                    <th>В наличии</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <tbody>
-                                        <tr>
-                                            <td><img src="img/Amazon Echo.jpg" alt="Philips Hue" width="100"></td>
-                                            <td>Philips Hue</td>
-                                            <td>Освещение</td>
-                                            <td>25,000 тг.</td>
-                                            <td >Да</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="img\xiaomibulb.jpg" alt="Xiaomi Smart Bulb" width="100"></td>
-                                            <td>Xiaomi Smart Bulb</td>
-                                            <td>Освещение</td>
-                                            <td>12,500 тг.</td>
-                                            <td >Да</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="img\tplink.jpg" alt="TP-Link Smart Plug" width="100"></td>
-                                            <td>TP-Link Smart Plug</td>
-                                            <td>Освещение</td>
-                                            <td>16,000 тг.</td>
-                                            <td >Да</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="img\Ring Video Doorbell.jpg" alt="Ring Video Doorbell" width="100"></td>
-                                            <td>Ring Video Doorbell</td>
-                                            <td>Безопасность</td>
-                                            <td>50,000 тг.</td>
-                                            <td >Нет</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="img\Arlo Pro 3.jpg" alt="Arlo Pro 3" width="100"></td>
-                                            <td>Arlo Pro 3</td>
-                                            <td>Безопасность</td>
-                                            <td>100,000 тг.</td>
-                                            <td >нет</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="img\thermostat.jpg" alt="Nest Thermostat" width="100"></td>
-                                            <td>Nest Thermostat</td>
-                                            <td>Климат-контроль</td>
-                                            <td>75,000 тг.</td>
-                                            <td >Да</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="img\Dyson Air Purifier.jpg" alt="Dyson Air Purifier" width="100"></td>
-                                            <td>Dyson Air Purifier</td>
-                                            <td>Климат-контроль</td>
-                                            <td>125,000 тг.</td>
-                                            <td >Да</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="img\Amazon Echo.jpg" alt="Amazon Echo" width="100"></td>
-                                            <td>Amazon Echo</td>
-                                            <td>Умные колонки</td>
-                                            <td>35,000 тг.</td>
-                                            <td >Нет</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="img\googlenesthub.jpg" alt="Google Nest Hub" width="100"></td>
-                                            <td>Google Nest Hub</td>
-                                            <td>Умные колонки</td>
-                                            <td>47,500 тг.</td>
-                                            <td >Нет</td>
-                                        </tr>
-                                    </tbody>
-                                </tr>
-                            </tbody>
-                        </table>
+                <button id="skrittabl" @click="toggleTable">Показать/Скрыть таблицу</button>
+                <div v-show="isTableVisible">
+                <div class="products-table">
+                    <h3>Таблица доступных товаров</h3>
+                    <table>
+                        <caption align="top"><strong>Список товаров в наличии</strong></caption>
+                        <thead>
+                            <tr>
+                                <th>Фото</th>
+                                <th>Название товара</th>
+                                <th>Категория</th>
+                                <th>Цена</th>
+                                <th>В наличии</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="C:\Users\artur\Desktop\Сайты HTML\images\Philips-Hue.jpg" alt="Philips Hue" width="100"></td>
+                                <td>Philips Hue</td>
+                                <td>Освещение</td>
+                                <td>25,000 тг.</td>
+                                <td >Да</td>
+                            </tr>
+                            <tr>
+                                <td><img src="C:\Users\artur\Desktop\Сайты HTML\images\xiaomibulb.jpg" alt="Xiaomi Smart Bulb" width="100"></td>
+                                <td>Xiaomi Smart Bulb</td>
+                                <td>Освещение</td>
+                                <td>12,500 тг.</td>
+                                <td >Да</td>
+                            </tr>
+                            <tr>
+                                <td><img src="C:\Users\artur\Desktop\Сайты HTML\images\tplink.jpg" alt="TP-Link Smart Plug" width="100"></td>
+                                <td>TP-Link Smart Plug</td>
+                                <td>Освещение</td>
+                                <td>16,000 тг.</td>
+                                <td >Да</td>
+                            </tr>
+                            <tr>
+                                <td><img src="C:\Users\artur\Desktop\Сайты HTML\images\Ring Video Doorbell.jpg" alt="Ring Video Doorbell" width="100"></td>
+                                <td>Ring Video Doorbell</td>
+                                <td>Безопасность</td>
+                                <td>50,000 тг.</td>
+                                <td >Нет</td>
+                            </tr>
+                            <tr>
+                                <td><img src="C:\Users\artur\Desktop\Сайты HTML\images\Arlo Pro 3.jpg" alt="Arlo Pro 3" width="100"></td>
+                                <td>Arlo Pro 3</td>
+                                <td>Безопасность</td>
+                                <td>100,000 тг.</td>
+                                <td >нет</td>
+                            </tr>
+                            <tr>
+                                <td><img src="C:\Users\artur\Desktop\Сайты HTML\images\thermostat.jpg" alt="Nest Thermostat" width="100"></td>
+                                <td>Nest Thermostat</td>
+                                <td>Климат-контроль</td>
+                                <td>75,000 тг.</td>
+                                <td >Да</td>
+                            </tr>
+                            <tr>
+                                <td><img src="C:\Users\artur\Desktop\Сайты HTML\images\Dyson Air Purifier.jpg" alt="Dyson Air Purifier" width="100"></td>
+                                <td>Dyson Air Purifier</td>
+                                <td>Климат-контроль</td>
+                                <td>125,000 тг.</td>
+                                <td >Да</td>
+                            </tr>
+                            <tr>
+                                <td><img src="C:\Users\artur\Desktop\Сайты HTML\images\Amazon Echo.jpg" alt="Amazon Echo" width="100"></td>
+                                <td>Amazon Echo</td>
+                                <td>Умные колонки</td>
+                                <td>35,000 тг.</td>
+                                <td >Нет</td>
+                            </tr>
+                            <tr>
+                                <td><img src="C:\Users\artur\Desktop\Сайты HTML\images\googlenesthub.jpg" alt="Google Nest Hub" width="100"></td>
+                                <td>Google Nest Hub</td>
+                                <td>Умные колонки</td>
+                                <td>47,500 тг.</td>
+                                <td >Нет</td>
+                            </tr>
+                        </tbody>
                     </div>
-                
-                    <script>
-                        $(document).ready(function () {
-                            // Инициализация DataTables
-                            $('#productsTable').DataTable({
-                                "paging": true,
-                                "searching": true,
-                                "ordering": true
-                            });
-                
-                            // Обработчик события для кнопки "Показать/скрыть таблицу"
-                            $('#toggle-table-btn').click(function () {
-                                $('.products-table').toggle(); // Скрыть или показать таблицу
-                            });
-                        });
-                    </script>
-                </body>
-                </html>
-                
-
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" align="center"><strong>Другие товары доступны по запросу</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </section>
             <table id="geoloc">
                 <tr>
@@ -273,7 +216,6 @@
                 </div>
             </section>
         </div>
-        
     </main>
     <footer>
         <div class="footer-container">
@@ -281,5 +223,5 @@
         </div>
     </footer>
 </body>
-<script src="js\3lab.js" defer></script>
+<script src="C:\Users\artur\Desktop\sites\javascript\3lab.js" defer></script>
 </html>
