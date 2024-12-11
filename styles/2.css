@@ -1,0 +1,276 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://i.gifer.com/2MdY.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Стили для заголовков */
+h1, h2, h3 {
+    color: #2f4f4f;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+h3 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+/* Анимация заголовка */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Применяем */
+.header-container h1 {
+    animation: fadeIn 1s ease-in-out;
+}
+/* Заголовок и навигация */
+.header-container {
+    
+    background-color: rgba(135, 206, 250, 0.9);
+    padding: 20px;
+    border-bottom: 2px solid #4682B4;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #5a9bd5;
+}
+
+/* Основной контейнер */
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон для улучшения читаемости */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+/* Общие стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+#products table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#products th {
+    text-align: center; /* Заголовок выравнен по центру */
+    background-color: rgba(70, 130, 180, 0.8); /* Полупрозрачный фон для заголовка */
+    color: white;
+}
+
+#products td {
+    text-align: left; /* По умолчанию выравнивание влево для первого столбца */
+}
+
+#products td:first-child {
+    text-align: left; /* Первый столбец выровнен по ширине */
+}
+
+#products td:nth-child(2) {
+    text-align: center; /* Второй столбец выровнен по центру */
+}
+
+#products td:nth-child(even) {
+    background-color: #f0f0f0; /* Светло-серый тон для четных столбцов */
+}
+
+#products td:nth-child(odd) {
+    background-color: #ffffff; /* Белый фон для нечетных столбцов */
+}
+
+
+/* один цвет для строк */
+#products tr:hover {
+    background-color: rgba(208, 231, 249, 0.8); /* Полупрозрачный фон при наведении */
+}
+/* Основные стили для таблицы с id="geoloc" */
+#geoloc {
+    width: 30%; /* Устанавливаем ширину таблицы на 30% от родительского элемента */
+    margin-left: 20px; /* Отступ от левого края страницы */
+    margin-top: 20px; /* Отступ сверху */
+    border-collapse: collapse; /* Убираем промежутки между ячейками */
+    background-color: #f9f9f9; /* Легкий серый фон для всей таблицы */
+    position: relative; /* Позиционирование относительно обычного потока документа */
+}
+
+/* Стили для строк таблицы */
+#geoloc tr {
+    transition: background-color 0.3s ease; /* Плавный переход при изменении цвета */
+}
+#geoloc {
+    margin-bottom: 20px;  /* Устанавливает отступ снизу */
+}
+
+/* Стили для ячеек таблицы */
+#geoloc td {
+    padding: 10px; /* Добавляем отступы внутри ячеек */
+    text-align: center; /* Центрируем текст внутри ячеек */
+    font-size: 16px; /* Уменьшаем размер шрифта */
+    border: 2px solid #007BFF; /* Синий цвет границ ячеек */
+}
+
+/* Стили для чередования цветов строк */
+#geoloc tr:nth-child(even) {
+    background-color: #f2f2f2; /* Светлый серый цвет для четных строк */
+}
+
+#geoloc tr:nth-child(odd) {
+    background-color: #ffffff; /* Белый цвет для нечетных строк */
+}
+
+/* Эффект при наведении на строку */
+#geoloc tr:hover {
+    background-color: #ddd; /* Меняем фон всей строки при наведении */
+}
+
+/* Добавление эффекта при наведении на ячейки (для выделения курсора) */
+#geoloc td:hover {
+    background-color: #ddd; /* Легкий фон для ячейки */
+    cursor: pointer; /* Курсор указывает, что ячейку можно нажимать */
+}
+
+
+/* Форма */
+.contact-container {
+    margin: 20px 0;
+}
+
+form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4682B4; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем границы */
+    padding: 10px; /* Отступы внутри кнопки */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer; /* Указатель при наведении */
+    font-size: 16px; /* Размер шрифта */
+}
+
+/* Эффект при наведении */
+button:hover {
+    background-color: #5a9bd5; /* Изменение цвета фона при наведении */
+}
+
+/* футер */
+.footer-container {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(135, 206, 250, 0.9);
+    border-top: 2px solid #4682B4;
+}
+#welcome-message {
+    border: 1px solid #333; /*граница */
+    padding: 2cm 1cm 2cm 3cm; /* Отступ */
+    background-color: #e9dfdf; /* Светло серый фон */
+    font-family: 'Times New Roman', serif; /* Шрифт */
+    font-size: 14pt; /* Размер */
+    text-indent: 1.5cm; /* Абзвц */
+}
+
+/* Стиль для буквицы */
+#welcome-message::first-letter {
+    font-size: 18pt; /* Размер */
+    font-weight: bold; /* Жирный шрифт */
+}
+/* Стиль для карттнки */
+#welcome-message img {
+    float: right;
+    margin-right: 10px;
+    width: 150px;
+    height: auto;
+}
+.cheburashka {
+    display: block;
+    margin-left: 0;
+    position: relative;
+}
+
+/* Адапт cтили */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-container {
+        padding: 10px;
+    }
+
+}
+svg {
+    position: absolute;
+    top: 50px; /* Положение чайника */
+    left: 50px; /* Положение чайника */
+}
+
+.steam {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}

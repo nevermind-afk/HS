@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src="..\javascript\3lab.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="../styles/2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HomeStore - интернет-магазин умного дома">
+    <title>HomeStore - Главная</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1><em>Добро пожаловать в</em> <strong>HomeStore</strong></h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#products">Продукция</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="JQ&VUE.html">Для персонала</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="main-container">
+            <section id="products">
+                <div id="welcome-message">
+                    <img src="https://media.istockphoto.com/id/1127929107/vector/welcome-lettering-sign-isolated-vector.jpg?s=612x612&w=0&k=20&c=kH2mqRoV8-1vutUYwGhdpzx-Wt24Gbq7Oz0sKxZcBWU=" alt="Добро пожаловать">
+                    <p>Добро пожаловать в HomeStore! Мы рады видеть вас на нашем сайте. Здесь вы можете найти широкий ассортимент товаров для умного дома, которые сделают вашу жизнь комфортнее и удобнее. Не стесняйтесь обращаться к нам с любыми вопросами!</p>
+                </div>
+                <h2>Наши предложения</h2>
+                
+                <div class="products-list">
+                    <h3>Товары категории "Умный дом"</h3>
+                    <ol>
+                        <li>Освещение
+                            <ul>
+                                <li>Philips Hue</li>
+                                <li>Xiaomi Smart Bulb</li>
+                                <li>TP-Link Smart Plug</li>
+                            </ul>
+                        </li>
+                        <li>Безопасность
+                            <ul>
+                                <li>Ring Video Doorbell</li>
+                                <li>Arlo Pro 3</li>
+                            </ul>
+                        </li>
+                        <li>Климат-контроль
+                            <ul>
+                                <li>Nest Thermostat</li>
+                                <li>Dyson Air Purifier</li>
+                            </ul>
+                        </li>
+                        <li>Умные колонки
+                            <ul>
+                                <li>Amazon Echo</li>
+                                <li>Google Nest Hub</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="add-product-form">
+                    <form id="addProductForm">
+                        <label>
+                            Название товара:
+                            <input type="text" id="productName" required>
+                        </label>
+                        <label>
+                            Категория:
+                            <input type="text" id="productCategory" required>
+                        </label>
+                        <label>
+                            Цена:
+                            <input type="number" id="productPrice" required>
+                        </label>
+                        <label>
+                            В наличии:
+                            <input type="checkbox" id="productAvailable">
+                        </label>
+                        <label>
+                            Фото:
+                            <input type="file" id="productImage" accept="image/*" required>
+                        </label>
+                        <button type="submit">Добавить товар</button>
+                    </form>
+                </div>          
+                <button id="sortPriceButton">Сортировать по цене</button>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <button id="toggle-table-btn">Показать/скрыть таблицу</button>
+                <!-- Подключение DataTables -->
+                <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+                <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+                
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Таблица товаров</title>
+                
+                    <!-- Подключение jQuery -->
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                
+                    <!-- Подключение DataTables -->
+                    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+                    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+                
+                    <style>
+                        /* Стили для таблицы */
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                        }
+                        th, td {
+                            padding: 10px;
+                            text-align: center;
+                            border: 1px solid #ddd;
+                        }
+                        th {
+                            background-color: rgba(70, 130, 180, 0.8);
+                            color: white;
+                        }
+                        tr:hover {
+                            background-color: rgba(208, 231, 249, 0.8);
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="products-table">
+                        <h3>Таблица доступных товаров</h3>
+                        <button id="toggle-table-btn">Показать/скрыть таблицу</button>
+                        <table id="productsTable" class="display">
+                            <thead>
+                                <tr>
+                                    <th>Фото</th>
+                                    <th>Название товара</th>
+                                    <th>Категория</th>
+                                    <th>Цена</th>
+                                    <th>В наличии</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="..\images/Amazon Echo.jpg" alt="Philips Hue" width="100"></td>
+                                            <td>Philips Hue</td>
+                                            <td>Освещение</td>
+                                            <td>25,000 тг.</td>
+                                            <td >Да</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="..\images\xiaomibulb.jpg" alt="Xiaomi Smart Bulb" width="100"></td>
+                                            <td>Xiaomi Smart Bulb</td>
+                                            <td>Освещение</td>
+                                            <td>12,500 тг.</td>
+                                            <td >Да</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="..\images\tplink.jpg" alt="TP-Link Smart Plug" width="100"></td>
+                                            <td>TP-Link Smart Plug</td>
+                                            <td>Освещение</td>
+                                            <td>16,000 тг.</td>
+                                            <td >Да</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="..\images\Ring Video Doorbell.jpg" alt="Ring Video Doorbell" width="100"></td>
+                                            <td>Ring Video Doorbell</td>
+                                            <td>Безопасность</td>
+                                            <td>50,000 тг.</td>
+                                            <td >Нет</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="..\images\Arlo Pro 3.jpg" alt="Arlo Pro 3" width="100"></td>
+                                            <td>Arlo Pro 3</td>
+                                            <td>Безопасность</td>
+                                            <td>100,000 тг.</td>
+                                            <td >нет</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="..\images\thermostat.jpg" alt="Nest Thermostat" width="100"></td>
+                                            <td>Nest Thermostat</td>
+                                            <td>Климат-контроль</td>
+                                            <td>75,000 тг.</td>
+                                            <td >Да</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="..\images\Dyson Air Purifier.jpg" alt="Dyson Air Purifier" width="100"></td>
+                                            <td>Dyson Air Purifier</td>
+                                            <td>Климат-контроль</td>
+                                            <td>125,000 тг.</td>
+                                            <td >Да</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="..\images\Amazon Echo.jpg" alt="Amazon Echo" width="100"></td>
+                                            <td>Amazon Echo</td>
+                                            <td>Умные колонки</td>
+                                            <td>35,000 тг.</td>
+                                            <td >Нет</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="..\images\googlenesthub.jpg" alt="Google Nest Hub" width="100"></td>
+                                            <td>Google Nest Hub</td>
+                                            <td>Умные колонки</td>
+                                            <td>47,500 тг.</td>
+                                            <td >Нет</td>
+                                        </tr>
+                                    </tbody>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <script>
+                        $(document).ready(function () {
+                            // Инициализация DataTables
+                            $('#productsTable').DataTable({
+                                "paging": true,
+                                "searching": true,
+                                "ordering": true
+                            });
+                
+                            // Обработчик события для кнопки "Показать/скрыть таблицу"
+                            $('#toggle-table-btn').click(function () {
+                                $('.products-table').toggle(); // Скрыть или показать таблицу
+                            });
+                        });
+                    </script>
+                </body>
+                </html>
+                
+
+            </section>
+            <table id="geoloc">
+                <tr>
+                    <td>Шиорта</td>
+                    <td id="shir"></td>
+                </tr>
+                <tr>
+                    <td>Долгота</td>
+                    <td id="dolg"></td>
+                </tr>
+            </table>
+            <button id="geobut">Геолокация</button>
+            <section id="contact">
+                <div class="contact-container">
+                    <h2>Контакты</h2>
+                    <p>Ознакомьтесь с нашими предложениями на <a href="C:\Users\artur\Desktop\Сайты HTML\html\partsite.html">нашем сайте</a> или посетите наш партнерский ресурс <a href="C:\Users\artur\Desktop\Сайты HTML\html\partsite.html">PartnerStore</a>.</p>
+                    <h3>Форма обратной связи</h3>
+                    <form action="/submit_form" method="POST">
+                        <label for="name">Имя:</label><br>
+                        <input type="text" id="name" name="name"><br><br>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email"><br><br>
+                        <label for="product">Выберите продукт:</label><br>
+                        <select id="product" name="product">
+                            <option value="philips_hue">Philips Hue</option>
+                            <option value="xiaomi_bulb">Xiaomi Smart Bulb</option>
+                            <option value="tp_link_plug">TP-Link Smart Plug</option>
+                            <option value="nest_thermostat">Nest Thermostat</option>
+                            <option value="dyson_air_purifier">Dyson Air Purifier</option>
+                            <option value="amazon_echo">Amazon Echo</option>
+                            <option value="google_nest_hub">Google Nest Hub</option>
+                        </select><br><br>
+                        <label for="message">Сообщение:</label><br>
+                        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+                        <button type="submit">Отправить</button> 
+                    </form>
+                </div>
+            </section>
+        </div>
+        
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 HomeStore - Все права защищены</p>
+        </div>
+    </footer>
+</body>
+<script src="C:\Users\artur\Desktop\Сайты HTML\js\3lab.js" defer></script>
+</html>
